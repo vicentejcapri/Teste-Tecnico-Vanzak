@@ -6,7 +6,7 @@
 
 Bem-vindo ao repositório do meu teste técnico para a vaga de estágio em desenvolvimento front-end. Este projeto consiste em um carrossel interativo de produtos vitais (Vitamina D, Ferro e Ômega 3), construído com foco em **fidelidade visual (Pixel Perfect)**, **manipulação dinâmica de DOM** e **estruturas de layout responsivas e estáveis**.
 
-🔗 **[Visualizar Projeto Online (Live Preview)](https://vicentejcapri.github.io/Teste-Vanzak/)**
+🔗 **[Visualizar Projeto Online (Live Preview)](https://vicentejcapri.github.io/Teste-Tecnico-Vanzak/)**
 
 ---
 
@@ -37,7 +37,7 @@ O objetivo deste projeto foi transformar um design do Figma em uma interface web
 
 1. Faça o clone deste repositório:
    \`\`\`bash
-   git clone https://github.com/vicentejcapri/Teste-Vanzak.git
+   git clone https://github.com/vicentejcapri/Teste-Tecnico-Vanzak.git
    \`\`\`
 2. Navegue até a pasta do projeto:
    \`\`\`bash
