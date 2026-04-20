@@ -1,0 +1,332 @@
+/* =========================================
+   1. VARIÁVEIS E RESET
+========================================= */
+:root {
+    /* Cores principais baseadas no layout */
+    --bg-blue: #95C8FF;
+    --text-dark: #1A1A1A;
+    --text-pink: #FD86CD;
+    --white: #FFFFFF;
+
+    /* Cores dos cards de benefícios */
+    --card-bg-default: rgba(255, 255, 255, 0.2);
+    --card-border: #4A4A4A;
+
+    --font-primary: 'Nunito', Arial, sans-serif;
+    --font-secondary: 'Roca', serif;
+
+    --radius-btn: 50%;
+    --radius-card: 8px;
+    --transition-default: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    background-image: url('./assets/images/Bg_VitaminaD.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. ESTRUTURA DO CARROSSEL 
+========================================= */
+.carousel-vitamina {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+.carousel__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px minmax(0, 1fr);
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    gap: 2rem;
+}
+
+.carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    background: transparent;
+    border: 1px solid var(--text-dark);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-btn);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__btn--prev {
+    left: 30px; 
+}
+
+.carousel__btn--next {
+    right: 30px; 
+}
+
+.carousel__btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* =========================================
+   3. ESTILIZAÇÃO DAS COLUNAS
+========================================= */
+
+.carousel__left,
+.carousel__center,
+.carousel__right {
+    width: 100%;
+}
+
+.carousel__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.carousel__subtitle {
+    font-family: var(--font-secondary);
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: -10px;
+}
+
+.carousel__title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-pink);
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: auto;
+
+    text-shadow:
+        2px 0 0 var(--white),
+        -2px 0 0 var(--white),
+        0 2px 0 var(--white),
+        0 -2px 0 var(--white),
+        2px 2px 0 var(--white),
+        -2px -2px 0 var(--white),
+        2px -2px 0 var(--white),
+        -2px 2px 0 var(--white);
+
+    margin-bottom: 1rem;
+}
+
+.carousel__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    color: var(--text-pink);
+    border: 2px solid var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 50px; 
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    position: relative;
+    top: -10px; 
+    left: 10%; 
+    margin-bottom: 2rem;
+}
+
+/* --- ESTILOS DAS FORMAS DA ESQUERDA --- */
+.carousel__phrases {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.phrase__pink-blob {
+    background-color: var(--text-pink);
+    color: var(--text-dark); 
+    border: 2px solid var(--text-dark); 
+    border-radius: 20px; 
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.phrase__pink-blob--serif {
+    font-family: var(--font-secondary); 
+    font-style: normal;
+    font-size: 16px; 
+}
+
+.phrase__pill-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.phrase__pill {
+    border: 2px solid var(--text-dark); 
+    color: var(--text-dark);
+    padding: 10px 24px;
+    border-radius: 50px; 
+    font-size: 14px;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+}
+
+/* --- ESTILOS DAS FORMAS DO FERRO --- */
+
+.phrase__circle {
+    border: 2px solid #1A1A1A;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+.phrase__half-circle {
+    border: 2px solid #1A1A1A;
+    border-radius: 50px 50px 0 0;
+    padding: 15px 30px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: -10px;
+}
+
+.carousel__phrases {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.phrase__pink-dot {
+    width: 20px; 
+    height: 20px;
+    border: 2px solid var(--text-dark);
+    border-radius: 50%;
+    margin: 0 5px; 
+}
+
+/* --- Coluna Central: Produto e Lottie --- */
+.carousel__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__bottle {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.carousel__lottie-container {
+    position: absolute;
+    top: 55%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 250px;
+    height: 250px;
+    pointer-events: none;
+}
+
+/* --- Coluna Direita: Grid de Benefícios --- */
+.carousel__right {
+    flex: 1;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 222px 222px;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* 1. Variáveis base para o card normal */
+.benefit-card {
+    width: 222px;
+    height: 154px;
+
+    background-color: var(--card-bg-default);
+    border: 2px solid var(--card-border);
+    border-radius: var(--radius-card);
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    transition: var(--transition-default);
+
+    --icon-fill: var(--text-pink);
+    --icon-stroke: var(--tema-borda);
+}
+
+/* 2. O Card Destacado (Inverte as cores) */
+.benefit-card--highlight {
+    background-color: var(--text-pink);
+    color: var(--white);
+    border-color: transparent;
+
+    border: 2px solid var(--card-border);
+    border-radius: var(--radius-card);
+
+    --icon-fill: #FFFFFF;
+    --icon-stroke: transparent;
+}
+
+.benefit-card__icon-wrapper svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.8rem;
+}
+
+.benefit-card__icon-wrapper svg path,
+.benefit-card__icon-wrapper svg circle,
+.benefit-card__icon-wrapper svg rect {
+    fill: var(--icon-fill) !important;
+    stroke: var(--icon-stroke) !important;
+    stroke-width: 3px !important;
+    transition: all 0.3s ease;
+}

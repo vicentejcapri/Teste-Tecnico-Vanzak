@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Benefícios - Teste Técnico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,700;0,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <section class="carousel-vitamina" id="carousel-section">
+
+        <button class="carousel__btn carousel__btn--prev" id="btn-prev" aria-label="Produto anterior">
+            &lt; </button>
+
+        <div class="carousel__content">
+
+            <div class="carousel__left">
+                <p class="carousel__subtitle">conheça a</p>
+                <h2 class="carousel__title" id="product-title">VITAMINA D</h2>
+                <span class="carousel__tag" id="product-tag">EM GUMMIES</span>
+                <div class="carousel__phrases">
+                    <div class="phrase__curved-container" id="phrase-curved">
+                        <img src="./assets/images/Texto_curvado.svg" alt="Sua melhor amiga">
+                    </div>
+                    <div class="phrase__pink-blob" id="phrase-middle">
+                        <span>para</span>
+                        <span id="product-reason">crescer</span>
+                    </div>
+                    <div class="phrase__pill-container">
+                        <div class="phrase__pink-dot"></div>
+                        <div class="phrase__pill" id="phrase-end">
+                            mais forte
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel__center">
+                <img src="./assets/images/Bg_icone_vitaminad.png" alt="Pote de Vitamina D" class="carousel__bottle"
+                    id="product-image">
+
+                <div class="carousel__lottie-container">
+                    <lottie-player id="product-lottie" src="assets/lotties/vitaminad.json" background="transparent"
+                        speed="1" style="width: 300px; height: 400px;" loop autoplay>
+                    </lottie-player>
+                </div>
+            </div>
+
+            <div class="carousel__right">
+                <div class="benefits-grid" id="benefits-container">
+                    <div class="benefit-card">
+                        <img alt="Ícone de imunidade" class="benefit-card__icon">
+                        <p class="benefit-card__text">Mais imunidade e defesa do corpo</p>
+                    </div>
+
+                    <div class="benefit-card benefit-card--highlight">
+                        <img alt="Ícone de osso" class="benefit-card__icon">
+                        <p class="benefit-card__text">Crescimento dos ossos mais fortes</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <img alt="Ícone de foco" class="benefit-card__icon">
+                        <p class="benefit-card__text">Dá um play no foco e aprendizado!</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <img alt="Ícone de energia" class="benefit-card__icon">
+                        <p class="benefit-card__text">Mais disposição e xô preguiça!</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <button class="carousel__btn carousel__btn--next" id="btn-next" aria-label="Próximo produto">
+            &gt; </button>
+
+    </section>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
